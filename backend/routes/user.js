@@ -10,9 +10,9 @@ const { authMiddleware } = require("../middleware");
 
 const signupBody = zod.object({
 	username: zod.string().email(),
+	password: zod.string(),
 	firstName: zod.string(),
 	lastName: zod.string(),
-	password: zod.string(),
 });
 
 router.post("/signup", async (req, res) => {
